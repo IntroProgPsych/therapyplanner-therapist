@@ -1,18 +1,18 @@
 #import all needed modules here
 import unittest
-from app import interpret
+from app import Sessions
 
 
 #write all your tests below this line
-class TestInterpret(unittest.TestCase):
+class TestSessions(unittest.TestCase):
     def test_low(self):
-        self.assertEqual(interpret(3), "Low")
+        self.assertEqual(Sessions(3), "Low")
 
     def test_moderate(self):
-        self.assertEqual(interpret(7), "Moderate")
+        self.assertEqual(Sessions(7), "Moderate")
 
     def test_high(self):
-        self.assertEqual(interpret(12), "High")
+        self.assertEqual(Sessions(12), "High")
 
 #write your test suite here, in the main() function
 def main():

@@ -3,7 +3,7 @@
 
 #write any functions you need, below this line
 
-def interpret(total: int) -> str:
+def Sessions(total: int) -> str:
     if total > 9:
         return "High"
     elif total >= 5:
@@ -27,15 +27,15 @@ questions = [
     for t in therapy_types
 ]
 
-def ask(prompt):
+def ask(question):
     while True:
         try:
-            x = int(input(prompt + " "))
+            x = int(input(question + " "))
             if 0 <= x <= 7:
                 return x
-            print("Number must be between 0 and 7.")
+            print("Number must be between 0 and 7!")
         except ValueError:
-            print("Please enter a valid number.")
+            print("Please enter a valid number!")
 #use the main() function for your program, define all other functions above main
 def main ():
     #use print statements such as this one, to mark important points in the application, to help you with debugging
@@ -46,9 +46,9 @@ def main ():
     for q in questions:
         totals[q["therapy"]] += ask(q["text"])
 
-    print("\n Weekly therapy load: \n")
+    print("\n Weekly therapy sessions: \n")
     for t, total in totals.items():
-        print(f"{t}: {total} session/week -> {interpret(total)}")
+        print(f"{t}: {total} session/week -> {Sessions(total)}")
 
 
 #please do not change the lines below, they are needed for your tests to work properly
